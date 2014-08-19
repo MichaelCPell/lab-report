@@ -1,0 +1,42 @@
+  {
+    "template" : "log",
+    "date" : "8/18/14",
+    "title": "Configuring a Rails/NG app ",
+    "background" : "I needed to configure an app to be able to work with rails and ng",
+    "research" : [
+      {
+        "summary" : "I found a blog post that looked like something that I would write if I had written a blogpost myself.",
+        "sources" : [
+          {
+            "date" : "9/17/13",
+            "label" : "Setup a simple Ruby 2 on Rails 4 environment with Vagrant and Virtual Box",
+            "url" : "http://www.intelligentbee.com/blog/2013/09/17/setup-a-simple-ruby-2-on-rails-4-environment-with-vagrant-and-virtual-box/",
+            "commentary": "This document covers some of the basics of Mongo Documents"
+          },
+          {
+            "date" : "2/14/14",
+            "label" : "Setup a simple Ruby 2 on Rails 4 environment with Vagrant and Virtual Box",
+            "url" : "http://sebastien.saunier.me/blog/2014/02/04/angular--rails-with-no-fuss.html",
+            "commentary": "This document covers some of the folder structure and bootstrapping techniques necessary to get the app up and running."
+          },
+          {
+            "date" : "2/14/14",
+            "label" : "Using Rails without Activerecord",
+            "url" : "http://stackoverflow.com/questions/2212709/remove-activerecord-in-rails-3",
+            "commentary": "SO that explains how to configure Rails to run without AR for a variety of rails versions."
+          },
+          
+        ]
+      }
+    ],
+    "steps" : [
+      {
+        "label": "Following the blog post",
+        "summary": "Everything going pretty much as planned"
+      },
+      {
+        "label": "Errors with `gem install rails`",
+        "summary" : "I think this is a result of my internet connection sucking.  I am going to try to install wihtout ri or rdoc."
+      }
+    ]
+  }

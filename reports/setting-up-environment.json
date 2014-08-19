@@ -1,0 +1,29 @@
+  {
+    "template" : "log",
+    "date" : "8/18/14",
+    "title": "Setting up a Rails/NG environment on Vagrant",
+    "background" : "I needed to set up a new rails environment to use with ",
+    "research" : [
+      {
+        "summary" : "I found a blog post that looked like something that I would write if I had written a blogpost myself.",
+        "sources" : [
+          {
+            "date" : "9/17/13",
+            "label" : "Setup a simple Ruby 2 on Rails 4 environment with Vagrant and Virtual Box",
+            "url" : "http://www.intelligentbee.com/blog/2013/09/17/setup-a-simple-ruby-2-on-rails-4-environment-with-vagrant-and-virtual-box/",
+            "commentary": "This document covers some of the basics of Mongo Documents"
+          }
+        ]
+      }
+    ],
+    "steps" : [
+      {
+        "label": "Following the blog post",
+        "summary": "Everything going pretty much as planned"
+      },
+      {
+        "label": "Errors with `gem install rails`",
+        "summary" : "I think this is a result of my internet connection sucking.  I am going to try to install wihtout ri or rdoc."
+      }
+    ]
+  }
