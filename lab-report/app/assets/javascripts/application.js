@@ -13,5 +13,6 @@
 //= require angular
 //= require angular-route
 //= require angular/config
+//= require angular/app
 //= require angular/modules
 //= require_tree .

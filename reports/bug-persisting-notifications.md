@@ -36,4 +36,5 @@ I can reorganize the elsif statement to put the potential classes in the appropr
 
 Seems to work well enough 
 
-#Section (Brainstorm Weaknesses )
+#Section (Brainstorm Weaknesses)
+
