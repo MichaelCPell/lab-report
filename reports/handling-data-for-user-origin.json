@@ -1,0 +1,33 @@
+{
+  "title" : "Handling data for user origin",
+  "mission" : "I want to update all of the records in the user table and make sure they have the appropriate jurisdiction_id set.  Not having this set is kicking up errors on password resets.",
+  "possible solutions" : [
+    {
+      "short" : "I am going to change all of the user_id's to CEFIA after making sure that the update process does not screw anything up.",
+      "concerns" : [
+        {
+          "title" : "Do I have a database back up?",
+          "status" : "I believe so."
+        },
+        {
+          "title" : "Does updating the user cause anything erratic to be sent out?",
+          "status" : ""
+        }
+      ]
+    }
+  ],
+  "log" : {
+    "buffer" : "
+       <Jurisdiction id: 6, name: \"CEFIA\", created_at: \"2013-03-21 15:45:09\", updated_at: \"2013-03-21 15:45:09\", subdomain: \"CEFIA\", accepts_payments: false, suspended: false, display: true> 
+      2.1.0 :006 > User.all.count
+       => 195 
+
+      User.where(jurisdiction_id: nil).limit(27).each do |u|
+        u.update_attribute(:jurisdiction_id, 6)
+      end
+
+      User.where(jurisdiction_id: nil).count"
+  }
+}
+
+
