@@ -1,7 +1,8 @@
 angular.module(ApplicationConfiguration.applicationModuleName).config(['$routeProvider', ($routeProvider) ->
   # Route for '/post'
   $routeProvider.when('/reports/new', { 
-    templateUrl: '/assets/reports/new.html'
+    templateUrl: '/assets/reports/new.html',
+    controller: 'ReportsController'
   })
 
   # # Default
