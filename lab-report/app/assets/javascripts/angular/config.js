@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
   // Init module configuration options
   var applicationModuleName = 'LabReport';
-  var applicationModuleVendorDependencies = ['ngRoute'];
+  var applicationModuleVendorDependencies = ['ngRoute', 'ngResource'];
 
   // Add a new vertical module
   var registerModule = function(moduleName, dependencies) {

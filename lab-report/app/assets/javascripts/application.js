@@ -12,6 +12,7 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require angular-resource
 //= require angular/config
 //= require angular/app
 //= require angular/modules
