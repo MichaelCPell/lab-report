@@ -1,0 +1,7 @@
+<ul>
+  <li ng-repeat="report in reports">
+    <a ng-href="#!/reports/{{report._id.$oid}}"> 
+      {{report.title || "No Title"}}
+    </a>
+  </li>
+</ul>

@@ -1,26 +1,24 @@
 'use strict';
 
-angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', function($scope, ReportsRest){
+angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', function($scope, ReportsRest, $routeParams){
+
+    ReportsRest.query({}, function(data){
+      $scope.reports = data;
+    });
+
 
     $scope.findOrCreateReport = function(){
-      if($scope.report == null){
+      if($routeParams.id == null){
         ReportsRest.save({},function(data){
-          console.log("Data from create()s")
-          console.log(data)
-          $scope.report = {id: data._id.$oid}
+          $scope.report = data
         })
       }else{
-        ReportsRest.get({reportId: $scope.reportId}, function(data){
-          console.log("Data from GET")
-          console.log(data)
-        })
+        $scope.report = ReportsRest.get({reportId: $routeParams.id})      
       }
     }
     
     $scope.updateReport = function() {
-      ReportsRest.update({id: $scope.report.id, report: $scope.report})
+      ReportsRest.update({id: $scope.report._id.$oid, report: $scope.report})
     };
-
-    console.log("ReportsController Successfully Loaded!");
   }
 ]);

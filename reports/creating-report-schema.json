@@ -28,8 +28,12 @@
             date: "8/18/14",
             label: "Blog post about arrays in Mongo.  Comments seem to offer a lot in the way of discussion about query performance for arrays in Mongo.  Discusses the idea of database normalization as the RDBMS model."
             url: "http://docs.mongodb.org/manual/core/document/",
+          },
+          {
+            "date" : "8/18/14",
+            "label" : "Blog post about arrays in Mongo.  Comments seem to offer a lot in the way of discussion about query performance for arrays in Mongo.  Discusses the idea of database normalization as the RDBMS model.",
+            "url" : ""
           }
-        }
         ]
       }
     ],

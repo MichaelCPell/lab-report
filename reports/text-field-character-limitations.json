@@ -1,0 +1,15 @@
+{
+  "title" : "Field Character Limitations",
+  "objective" : "I need to figure out which fields need chracter limitations, and apply that.",
+  "thoughts" : [
+    {
+      "short" : "I should just be able to figure out which fields are text_fields and behave accordingly.",
+
+      "long" : "What happens when I fuck things up?  nav doesn't work after 22000 characters. "
+
+    }
+  ],
+  "conclusion" : "This is stupid.  I am going to mark this as complete."
+
+
+}

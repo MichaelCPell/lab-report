@@ -1,0 +1,32 @@
+{
+ "goals":[
+    {
+      "goal" : "Create the Review Model and Associations According to Diagram",
+      "progress" : [
+        {
+          "step" : "Generate database table",
+          "content" : "We generated the database model and then fixed up the associations."
+        },
+        {
+          "step" : "Work on Red for Model Spec",
+          "content" : "I want a spec that says we can associate a review with each type of reiewer.",
+          "lesson" : "You can use the syntax `$ git checkout <branch> <filename>` to grab specific files from other branches"
+        },
+        { 
+          "step" : "Test associations around Worker.received_reviews & Worker.reviews",
+          "content" : "We made a new spec in the Worker model that checks these values."
+        }
+      ]
+    },
+    {
+      "goal" : "Create 'Sweeper Reviews Self' Form",
+      "problem": "Creating multiple fields_for forms of a single item in a single form",
+      "text" : "We need to build one new review for each of the potential categories"
+    }
+  ],
+  "followups" : [
+    "Get the spec working for Goal1 Step 3", 
+    "Reintegrate UI of the form", 
+    "Work on Applications#Create"
+  ]
+}
