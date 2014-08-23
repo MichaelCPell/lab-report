@@ -13,7 +13,8 @@ angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRes
           $scope.report = data
         })
       }else{
-        $scope.report = ReportsRest.get({reportId: $routeParams.id})      
+        $scope.report = ReportsRest.get({reportId: $routeParams.id})  
+        console.log($scope.report)    
       }
     }
     

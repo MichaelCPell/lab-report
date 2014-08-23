@@ -1,6 +1,6 @@
 angular.module('Reports').factory('ReportsRest', ['$resource', function($resource){
 
-  return $resource('/reports/:reportId', { 
+  return $resource('/reports/:reportId.json', { 
     reportId: '@id'
   }, {
     update: {
