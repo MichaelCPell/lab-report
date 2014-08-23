@@ -1,0 +1,22 @@
+{
+  "title" : "I am trying to optimize the WelcomeController#dashboard so that it can handle large amounts of service requests in a reasonable amount of time.",
+  "content" : "I am tryign to figure out what is going on, or which command is taking particularly long.  But benchmarking is being resistant.  I am workign on my new attitude.  Everything is a product.  I have to be willing to watch and be proud of seeing anything grow.  I should also be impressed with things that have already grown.",
+  "benchmarks-work" : "All of a sudden the benchmarks have begun to work.  I have a particular function nailed.",
+  "culprit-function" : "DecoratedViewingFinder.find_and_decorate_service_request_viewings_from_subset",
+  "plan-of-action" : [
+    "I am going to take a look at what is going on in this method and see what is most ripe for optimization.",
+    "I am fairly pleased with myself.  I seem to have kept the culprit code to a pretty isolated point.  The DecoratedViewingFinder's decorate_service_requests method is definitely the culprit.  Let's check it out.",
+    "The real culprit is the SericeRequestViewing class itself.  It's the one making a bunch of calls to the database. ",
+    "So using the includes statement does not really work.  The .include() method only works on where, if there are going to be a bunch of records to include. ",
+
+    "Fuck it, endless scroll"
+
+  ]
+
+}
+
+sr_id: 1078
+
+viewing_id: 5118
+
+DecoratedViewingFinder.decorate_service_requests([[1078,"???",5118]])
