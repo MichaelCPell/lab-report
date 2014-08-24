@@ -13,7 +13,11 @@ angular.module('Nodes').directive('addNodeEditor', ['$compile', function($compil
       link: function(scope, element, attrs){
         
         element.on('click', function(){
-          element.parent().prepend($compile("<node-editor></node-editor>")(scope))
+          $(".clearable").remove()
+          scope.node = {}
+          scope.node.title = "Some new node"
+
+          element.parent().prepend($compile("<node-editor class='clearable'></node-editor>")(scope))
         });
       }
     }
