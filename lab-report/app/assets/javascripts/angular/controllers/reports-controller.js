@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', function($scope, ReportsRest, $routeParams){
+    $scope.node = {}
 
     ReportsRest.query({}, function(data){
       $scope.reports = data;
     });
-
 
     $scope.findOrCreateReport = function(){
       if($routeParams.id == null){
@@ -14,12 +14,16 @@ angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRes
         })
       }else{
         $scope.report = ReportsRest.get({reportId: $routeParams.id})  
-        console.log($scope.report)    
       }
     }
     
     $scope.updateReport = function() {
-      ReportsRest.update({id: $scope.report._id.$oid, report: $scope.report})
+      ReportsRest.update({id: $scope.report.id, report: $scope.report})
     };
+
+
+    $scope.setNode = function(node){
+      $scope.node = node
+    }
   }
 ]);

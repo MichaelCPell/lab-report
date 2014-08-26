@@ -16,6 +16,12 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$routePr
     controller: 'ReportsController'
   })
 
+  $routeProvider.when('/reports/:reportId/nodes/:nodeId', { 
+    templateUrl: '/assets/nodes/show.html',
+    controller: 'NodesController'
+  })
+
+
   # # Default
   $routeProvider.otherwise({ 
       templateUrl: '/assets/reports/new.html'

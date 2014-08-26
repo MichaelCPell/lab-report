@@ -1,8 +1,16 @@
 <div class="row">
-  <textarea
-    id="textbox" 
-    ng-model="node.content" 
-    style="width: 100%; height: 500px;"
-    >
-  </textarea>
+  <div ng-form="nodeForm" ng-controller="NodesController" ng-init="findOrCreateNode()">
+    <input 
+      ng-model="node.title"
+      ng-change="updateNode()"
+      style="width: 100%;"
+      >
+    <textarea
+      id="textbox" 
+      ng-model="node.content"
+      ng-change="updateNode()"
+      style="width: 100%; height: 200px;"
+      >
+    </textarea>
+  </div>
 </div>

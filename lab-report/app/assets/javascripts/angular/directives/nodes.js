@@ -11,13 +11,10 @@ angular.module('Nodes').directive('addNodeEditor', ['$compile', function($compil
     return{
       restrict: 'A',
       link: function(scope, element, attrs){
-        
-        element.on('click', function(){
+        element.on('click', function(e){
           $(".clearable").remove()
-          scope.node = {}
-          scope.node.title = "Some new node"
 
-          element.parent().prepend($compile("<node-editor class='clearable'></node-editor>")(scope))
+          angular.element("#content-box").prepend($compile("<node-editor class='clearable'></node-editor>")(scope))
         });
       }
     }
