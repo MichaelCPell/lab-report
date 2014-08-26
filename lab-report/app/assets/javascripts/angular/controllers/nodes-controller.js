@@ -4,10 +4,11 @@ angular.module('Nodes').controller("NodesController", ['$scope', 'NodesRest', '$
 
 
     $scope.findOrCreateNode = function(){
-
-      if($scope.node != null){
+      if($scope.node.id != null){
         return;
       }
+
+
 
       if($routeParams.nodeId == null){
         NodesRest.save({report_id: $scope.report.id}, function(data){

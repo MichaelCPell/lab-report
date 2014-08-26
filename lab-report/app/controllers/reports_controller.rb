@@ -22,4 +22,10 @@ class ReportsController < ApplicationController
     @report.update_attributes(params[:report].permit!)
     render json: "It worked!"
   end
+
+  def destroy
+    @report = Report.find(params[:id])
+    render json: @report.delete
+
+  end
 end

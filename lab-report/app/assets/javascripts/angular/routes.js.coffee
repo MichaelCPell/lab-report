@@ -24,7 +24,8 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$routePr
 
   # # Default
   $routeProvider.otherwise({ 
-      templateUrl: '/assets/reports/new.html'
-    })
+    templateUrl: '/assets/reports/index.html',
+    controller: 'ReportsController'
+  })
 
 ])

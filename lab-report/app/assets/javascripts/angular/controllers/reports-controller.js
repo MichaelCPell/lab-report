@@ -21,9 +21,18 @@ angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRes
       ReportsRest.update({id: $scope.report.id, report: $scope.report})
     };
 
+    $scope.deleteReport = function(){
+      ReportsRest.delete({reportId: $scope.report.id})
+      window.location = "/#!/reports"
+    }
+
 
     $scope.setNode = function(node){
       $scope.node = node
+    }
+
+    $scope.clearNode = function(){
+      $scope.node = {}
     }
   }
 ]);

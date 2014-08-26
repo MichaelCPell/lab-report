@@ -6,7 +6,9 @@
 </div>
 <div class="col-md-4">
   Title: {{report.title}}
+  <br/>
   Objective: {{report.objective}}
+  <br/>
   <ul>
     <li ng-repeat="node in report.nodes">
       <a  href=""
@@ -16,4 +18,10 @@
           >{{node.title}}</a>
     </li>
   </ul>
+  <div class="row">
+    <a href="" 
+        ng-really-click="deleteReport()" 
+        class="button" 
+        ng-really-message="Are you sure?">Delete</a>
+  </div>
 </div>
