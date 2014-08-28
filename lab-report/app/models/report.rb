@@ -3,7 +3,7 @@ class Report
   include Mongoid::Attributes::Dynamic
 
 
-  field :title, type: String
+  field :title, type: String, default: "Unnamed Report"
   field :objective, type: String
 
   embeds_many :nodes

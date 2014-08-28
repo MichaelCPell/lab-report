@@ -1,7 +1,7 @@
 angular.module('Nodes').directive('addNodeMenu', function(){
   return{
     restrict: 'E',
-    templateUrl: "assets/add-node-menu.html",
+    templateUrl: "/ng/partials/add-node-menu.html",
     controller: "NodeMenuController"
   }
 })

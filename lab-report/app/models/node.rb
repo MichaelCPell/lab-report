@@ -7,7 +7,7 @@ class Node
 
   field :content, type: String  
   field :type, type: String
-  field :title, type: String
+  field :title, type: String, default: "Unnamed Text"
   
   def id
     read_attribute(:id).to_s

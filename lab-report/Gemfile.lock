@@ -93,6 +93,11 @@ GEM
     rails-assets-angular-route (1.2.22)
       rails-assets-angular (= 1.2.22)
     rails-assets-jquery (2.1.1)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.5)
       actionpack (= 4.1.5)
       activesupport (= 4.1.5)
@@ -156,6 +161,7 @@ DEPENDENCIES
   rails-assets-angular-resource
   rails-assets-angular-route
   rails-assets-jquery
+  rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

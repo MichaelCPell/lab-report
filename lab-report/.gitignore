@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+public/.DS_Store
+public/ng/.DS_Store
+public/.DS_Store
