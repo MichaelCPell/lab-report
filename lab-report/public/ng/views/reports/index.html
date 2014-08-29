@@ -1,5 +1,7 @@
+Search:
+<input type="text" ng-model="search.title" focus-me="angular.element(document).ready()">
 <ul>
-  <li ng-repeat="report in reports">
+  <li ng-repeat="report in reports | filter:search">
     <a ng-href="#!/reports/{{report._id.$oid}}"> 
       {{report.title || "No Title"}}
     </a>

@@ -10,8 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //= require jquery
+//= require jquery-ujs 
 //= require angular
-//= require angular-route
+//= require angular-route 
 //= require angular-resource
 //= require angular/config
 //= require angular/app

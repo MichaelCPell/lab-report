@@ -1,4 +1,27 @@
-<div ng-init="findOrCreateReport()">
-  <report-editor>
-  </report-editor>
+<div class="col-md-8">
+  <div id="content-box" ng-init="findOrCreateReport()">
+    <report-editor>
+    </report-editor>
+  </div>
+</div>
+<div class="col-md-4">
+  Title: {{report.title}}
+  <br/>
+  Objective: {{report.objective}}
+  <br/>
+  <ul>
+    <li ng-repeat="node in report.nodes">
+      <a  href=""
+          data-id={{node.id}}
+          add-node-editor
+          ng-click="setNode(node)"
+          >{{node.title}}</a>
+    </li>
+  </ul>
+  <div class="row">
+    <a href="" 
+        ng-really-click="deleteReport()" 
+        class="button" 
+        ng-really-message="Are you sure?">Delete</a>
+  </div>
 </div>

@@ -2,6 +2,7 @@
   <div ng-form="nodeForm" ng-controller="NodesController" ng-init="findOrCreateNode()">
     <input 
       ng-model="node.title"
+      ng-model-options="{debounce: 500}"
       ng-change="updateNode()"
       style="width: 100%;"
       >
@@ -9,6 +10,7 @@
       id="textbox" 
       ng-model="node.content"
       ng-change="updateNode()"
+      ng-model-options="{debounce: 500}"
       style="width: 100%; height: 200px;"
       >
     </textarea>

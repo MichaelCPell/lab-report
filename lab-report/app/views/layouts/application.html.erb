@@ -45,12 +45,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">LabReport</a>
+        <a class="navbar-brand" href="/">LabReport</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "New Report", "#!/reports/new"  %></li>
-            <li><%= link_to "Reports Index", "#!/reports"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "New Report", "#!/reports/new"  %></li>
+            <% if current_user %>
+              <li><%= link_to "Reports Index", "#!/reports"  %></li>
+              <li> <a><%= current_user.email %></a> </li>
+              <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
+            <% else %>
+              <li><%= link_to "Sign In", new_user_session_path  %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -58,10 +63,13 @@
 
     <div class="container">
       <div class="row">
-          <div ng-view>
-              <%= bootstrap_flash %>
-              <%= yield %>
-          </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+            <%= bootstrap_flash %>
+            <%= yield %>
+
+        <div ng-view>
+        </div>
       </div>
 
       <footer>

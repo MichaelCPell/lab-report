@@ -1,1 +1,1 @@
-json.extract! @report, :id, :title
+json.extract! @report, :id, :title, :objective

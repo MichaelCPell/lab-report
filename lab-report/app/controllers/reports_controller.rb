@@ -1,19 +1,19 @@
 class ReportsController < ApplicationController
 
-
   def show
     @report = Report.find(params[:id])
   end
   
   def index
-    @reports = Report.all
-    render json: @reports
+    @reports = Report.where(user_id: current_user.id)
   end
 
   def create
-    @report = Report.create
-
-    render json: @report
+    if current_user
+      @report = Report.create(user_id: current_user.id)
+    else 
+      @report = Report.create
+    end
   end
 
   def update
