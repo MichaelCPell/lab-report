@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', '$routeParams', function($scope, ReportsRest, $routeParams){
-    $scope.node = {}
+    $scope.item = {}
 
     ReportsRest.query({}, function(data){
       $scope.reports = data;
@@ -26,13 +26,5 @@ angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRes
       window.location = "/#!/reports"
     }
 
-
-    $scope.setNode = function(node){
-      $scope.node = node
-    }
-
-    $scope.clearNode = function(){
-      $scope.node = {}
-    }
   }
 ]);

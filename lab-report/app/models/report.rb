@@ -6,7 +6,7 @@ class Report
   field :title, type: String, default: "Unnamed Report"
   field :objective, type: String
 
-  embeds_many :nodes
+  has_many :items
 
   
   def id

@@ -4,5 +4,5 @@
 
 ApplicationConfiguration.registerModule('App');
 ApplicationConfiguration.registerModule('Reports');
-ApplicationConfiguration.registerModule('Nodes');
+ApplicationConfiguration.registerModule('Items');
 

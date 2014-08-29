@@ -1,2 +1,3 @@
-json.extract! @report, :id, :title, :objective
-json.nodes @report.nodes, :id, :title, :content
+json.(@report, :id, :title, :objective)
+
+json.items @report.items, partial: "reports/items", as: :item

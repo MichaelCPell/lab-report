@@ -16,9 +16,9 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$routePr
     controller: 'ReportsController'
   })
 
-  $routeProvider.when('/reports/:reportId/nodes/:nodeId', { 
-    templateUrl: 'ng/views/nodes/show.html',
-    controller: 'NodesController'
+  $routeProvider.when('/reports/:reportId/items/:itemId', { 
+    templateUrl: 'ng/views/items/show.html',
+    controller: 'ItemsController'
   })
 
 
