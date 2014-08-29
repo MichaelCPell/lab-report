@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
   // Init module configuration options
   var applicationModuleName = 'LabReport';
-  var applicationModuleVendorDependencies = ['ngRoute', 'ngResource'];
+  var applicationModuleVendorDependencies = ['ngRoute', 'ngResource', 'kendo.directives'];
 
   // Add a new vertical module
   var registerModule = function(moduleName, dependencies) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', function($scope, ReportsRest, $routeParams){
+angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', '$routeParams', function($scope, ReportsRest, $routeParams){
     $scope.node = {}
 
     ReportsRest.query({}, function(data){

@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-route 
 //= require angular-resource
+//= require kendo.all.min
 //= require angular/config
 //= require angular/app
 //= require angular/modules
