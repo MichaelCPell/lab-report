@@ -1,1 +1,1 @@
-json.extract! @item, :id, :content, :title
+json.(@item, :id, :content, :title)

@@ -1,9 +1,10 @@
 class Item
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
+  include Mongoid::Ancestry
+  has_ancestry
 
   belongs_to :report
-  recursively_embeds_many
 
 
   field :content, type: String  
@@ -15,6 +16,6 @@ class Item
   end
 
   def items
-    child_items
+    children
   end
 end
