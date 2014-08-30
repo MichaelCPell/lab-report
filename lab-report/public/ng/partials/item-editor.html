@@ -1,10 +1,11 @@
 <div class="row">
-  <div ng-form="itemForm" ng-controller="ItemsController" ng-init="findOrCreateItem()">
+  <div ng-form="itemForm" ng-controller="ItemsController">
     <input 
       ng-model="item.title"
       ng-model-options="{debounce: 500}"
       ng-change="updateItem()"
       style="width: 100%;"
+      focus-me
       >
     <textarea
       id="textbox" 

@@ -4,7 +4,7 @@ angular.module('Items').controller("ItemsController", ['$scope', 'ItemsRest', '$
 
 
     $scope.findOrCreateItem = function(){
-      if($scope.item.id != null){
+      if($scope.item._id != null){
         return;
       }
 
@@ -19,7 +19,7 @@ angular.module('Items').controller("ItemsController", ['$scope', 'ItemsRest', '$
     }
     
     $scope.updateItem = function() {
-      ItemsRest.update({report_id: $scope.report.id, id: $scope.item.id, item: $scope.item})
+      ItemsRest.update({report_id: $scope.report.id, id: $scope.item._id, item: $scope.item})
     };
   }
 ]);

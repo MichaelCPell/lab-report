@@ -2,10 +2,12 @@
   <div class="demo-section k-content" ng-controller="ReportNavController">
         <div class="box-col">
             <h4>{{report.title}}</h4>
-            <div kendo-tree-view="tree"
-             k-data-source="treeData"
-             k-template="itemTemplate"
-             k-on-change="selectedItem = dataItem"></div>
+            <div 
+              id="navTree"
+              kendo-tree-view="tree"
+              k-data-source="treeData"
+              k-template="itemTemplate"
+              k-on-change="selectedItem = dataItem; setItem(dataItem); setItemEditor();"></div>
         </div>
 
         <div class="box-col">

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Reports').controller("ReportNavController",  ['$scope', 'ReportsRest', '$routeParams', 'ItemsRest', function($scope, ReportsRest, $routeParams, ItemsRest){
+angular.module('Reports').controller("ReportNavController",  ['$scope', 'ReportsRest', '$routeParams', 'ItemsRest', '$compile', function($scope, ReportsRest, $routeParams, ItemsRest, $compile){
 
     ReportsRest.get({reportId: $routeParams.id}).$promise.then(function(data){
       var foo = data.items
@@ -8,11 +8,7 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
 
     })
 
-    $scope.itemTemplate = "<span ng-click='setItem(dataItem)' add-item-editor>{{dataItem.title}}</span>";
-
-    $scope.click = function(dataItem) {
-      alert(dataItem.title);
-    };
+    $scope.itemTemplate = "<span>{{dataItem.title}}</span>";
 
     function makeItem() {
       var txt = kendo.toString(new Date(), "HH:mm:ss");
@@ -29,7 +25,7 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       var newItem = makeItem();
       ItemsRest.save(newItem, function(data){
         var savedItem = {
-          id: data.id,
+          _id: data.id,
           title: data.title,
           content: data.content
         };
@@ -43,7 +39,7 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       var newItem = makeItem();
       ItemsRest.save(newItem, function(data){
         var savedItem = {
-          id: data.id,
+          _id: data.id,
           title: data.title,
           content: data.content
         };
@@ -72,7 +68,6 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       array.splice(index, 1);
     };
 
-
     $scope.setItem = function(item){
       $scope.item = item
     }
@@ -81,5 +76,13 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       $scope.item = {}
     }
 
+    $scope.debug = function(event){
+      // this.click()
+    }
+
+    $scope.setItemEditor = function(){
+      $(".clearable").remove()
+      angular.element("#content-box").prepend($compile("<item-editor class='clearable'></item-editor>")($scope))
+    }
   }
 ]);

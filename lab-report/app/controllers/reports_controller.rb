@@ -18,8 +18,12 @@ class ReportsController < ApplicationController
 
   def update
     @report = Report.find_or_create_by(id: params[:id])
-    params[:report].delete(:_id)
+    params[:report].delete(:id)
+
+    params[:report].delete(:items)
+
     @report.update_attributes(params[:report].permit!)
+
     render json: "It worked!"
   end
 

@@ -1,27 +1,36 @@
-<div class="col-md-8">
-  <div id="content-box" ng-init="findOrCreateReport()">
-    <report-editor>
-    </report-editor>
-  </div>
-</div>
 <div class="col-md-4">
-  Title: {{report.title}}
-  <br/>
-  Objective: {{report.objective}}
-  <br/>
-  <ul>
-    <li ng-repeat="node in report.nodes">
-      <a  href=""
-          data-id={{node.id}}
-          add-node-editor
-          ng-click="setNode(node)"
-          >{{node.title}}</a>
-    </li>
-  </ul>
+  <div class="demo-section k-content" ng-controller="ReportNavController">
+        <div class="box-col">
+            <h4>{{report.title}}</h4>
+            <div 
+              id="navTree"
+              kendo-tree-view="tree"
+              k-data-source="treeData"
+              k-template="itemTemplate"
+              k-on-change="selectedItem = dataItem; setItem(dataItem); setItemEditor();"></div>
+        </div>
+
+        <div class="box-col">
+          <button class="k-button" ng-click="addFirst()">Add Item</button>
+        </div>
+        <div class="box-col" ng-show="selectedItem">
+          <button class="k-button" ng-click="addAfter(selectedItem)">Add Next Item</button>
+          <button class="k-button" ng-click="addBelow(selectedItem)">Add Child item</button>
+          <button class="k-button" ng-click="remove(selectedItem)">Delete</button>
+        </div>
+    </div>
+
   <div class="row">
     <a href="" 
         ng-really-click="deleteReport()" 
         class="button" 
-        ng-really-message="Are you sure?">Delete</a>
+        ng-really-message="Are you sure?">Delete Report</a>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div id="content-box" ng-init="findOrCreateReport()">
+    <report-editor>
+    </report-editor>
   </div>
 </div>
