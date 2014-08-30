@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
 
   def create
     @report = Report.find(params[:report_id])
-
     if params[:parent_id]
       @item = Item.find(params[:parent_id]).children.create(params[:item].permit!)
     else

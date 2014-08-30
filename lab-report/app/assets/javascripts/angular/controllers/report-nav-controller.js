@@ -14,7 +14,7 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       var txt = kendo.toString(new Date(), "HH:mm:ss");
       return { 
         report_id: $scope.report.id,
-        parent_id: $scope.item.id,
+        parent_id: $scope.item._id,
         item: {
           title: txt
         }
@@ -53,7 +53,7 @@ angular.module('Reports').controller("ReportNavController",  ['$scope', 'Reports
       var newItem = makeItem();
       ItemsRest.save(newItem, function(data){
         var savedItem = {
-          id: data.id,
+          _id: data.id,
           title: data.title,
           content: data.content
         };
