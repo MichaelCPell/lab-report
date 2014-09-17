@@ -3,11 +3,15 @@
 angular.module('Reports').controller("ReportsController", ['$scope', 'ReportsRest', '$routeParams', '$routeParams', function($scope, ReportsRest, $routeParams){
     $scope.item = {title: "bar"}
 
-    ReportsRest.query({}, function(data){
-      $scope.reports = data;
-    });
+
+    $scope.findReports = function(){
+      ReportsRest.query({}, function(data){
+        $scope.reports = data;
+      });
+    }
 
     $scope.findOrCreateReport = function(){
+      console.log($routeParams.id)
       if($routeParams.id == null){
         ReportsRest.save({},function(data){
           $scope.report = data
